@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body onkeydown="handleKey(event)" onload="onInit(gAlienRowCount)">
+    <div class="titles-container">
+        <h1>Space Invaders</h1>
+        <h2>Score : <span class="score-value">0</span></h2>
+    </div>
+    <div class="bonuses-container">
+        <p class="lives-txt">Lives :</p>
+        <p class="lives-value">❤️❤️❤️</p>
+        <p class="super-mode-txt">SuperMode :</p>
+        <p class="super-mode-value">⚡⚡⚡</p>
+        <p class="shields-txt">Shields :</p>
+        <p class="shields-value">🛡️🛡️🛡️</p>
+        <button class="change-theme-btn" onclick="changeTheme()">Change theme</button>
+        <div class="levels-btn-container">
+            <button class="level-btn" onclick="onRestart(2)">Easy</button>
+            <button class="level-btn" onclick="onRestart(3)">Normal</button>
+            <button class="level-btn" onclick="onRestart(4)">Hard</button>
+        </div>
+    </div>
+    <div class="game-over-modal">
+        GAME OVER 😭
+    </div>
+    <table class="board-game">
+
+    </table>
+    <div class="btn-container">
+        <button class="start-game-btn" onclick="onStart()">Start Game</button>
+    </div>
+    <hr class="upper-line">
+    <div class="instructions-container">
+        <h3>Instructions :</h3>
+        <ul>
+            <li>Shoot all aliens before they reach the player.</li>
+            <li>"space" - shoot laser.</li>
+            <li>"X" - activate super mode - shoots laser x2 faster.</li>
+            <li>"N" - activate blow up mode - when alien is shot, his neighbors get killed too.</li>
+            <li>"Z" - activate shield mode - protects the player from rocks for 5 seconds.</li>
+            <li>If space candy is hit by laser - aliens freeze for 5 seconds and player gets +50 points.</li>
+        </ul>
+    </div>
+    <hr class="lower-line">
+    <script src="js/util.js"></script>
+    <script src="js/alien.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
